@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
-function StartScreen({ numQuestions, dispatch }) {
+import { useQuiz } from '../contexts/QuizContext'
+
+function StartScreen() {
+  const { numQuestions, dispatch } = useQuiz()
   return (
     <div className="start">
       <h2>Welcome to the React quiz!</h2>
