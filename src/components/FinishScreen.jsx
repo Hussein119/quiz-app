@@ -1,14 +1,9 @@
 /* eslint-disable react/prop-types */
 import RestartButton from './RestartButton'
-
-function FinishScreen({
-  points,
-  maxPoints,
-  highScore,
-  dispatch,
-  index,
-  numQuestions,
-}) {
+import { useQuiz } from '../contexts/QuizContext'
+function FinishScreen() {
+  const { points, maxPoints, highScore, dispatch, index, numQuestions } =
+    useQuiz()
   const percentage = (points / maxPoints) * 100
   let emoji
   if (percentage === 100) emoji = '🥇'

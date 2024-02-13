@@ -2,8 +2,10 @@
 import NextButton from './NextButton'
 import FinishButton from './FinishButton'
 import Timer from './Timer'
+import { useQuiz } from '../contexts/QuizContext'
 
-function Footer({ dispatch, answer, index, numQuestions, secondsRemaining }) {
+function Footer() {
+  const { dispatch, answer, index, numQuestions, secondsRemaining } = useQuiz()
   return (
     <footer>
       <Timer dispatch={dispatch} secondsRemaining={secondsRemaining} />

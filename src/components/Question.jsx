@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
 import Options from './Options'
-function Question({ question, dispatch, answer }) {
-  console.log(question)
+import { useQuiz } from '../contexts/QuizContext'
+
+function Question() {
+  const { questions, index, dispatch, answer } = useQuiz()
+  const question = questions[index]
   return (
     <div key={question.id}>
       <h4>{question.question}</h4>
